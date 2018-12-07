@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var locationManager: CLLocationManager!
     var notificationCenter: UNUserNotificationCenter!
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         self.locationManager = CLLocationManager()
         self.locationManager!.delegate = self
@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        if launchOptions?[UIApplicationLaunchOptionsKey.location] != nil {
+        if launchOptions?[UIApplication.LaunchOptionsKey.location] != nil {
             print("I woke up thanks to geofencing")
         }
 
@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let content = UNMutableNotificationContent()
         content.title = "Awesome title"
         content.body = "Well-crafted body message"
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default
         
         // when the notification will be triggered
         let timeInSeconds: TimeInterval = 3
