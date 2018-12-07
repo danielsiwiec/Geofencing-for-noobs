@@ -39,6 +39,7 @@ class ViewController: UIViewController {
         geofenceRegion.notifyOnExit = true
         
         self.locationManager.startMonitoring(for: geofenceRegion)
+        print(self.locationManager.requestLocation())
     }
 
     override func didReceiveMemoryWarning() {
